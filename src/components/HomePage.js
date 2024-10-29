@@ -17,7 +17,7 @@ const HomePage = () => {
     comments: '',
   });
 
-  // Create a new task
+  // Here Create a new task
   const handleCreateTask = () => {
     setTasks([...tasks, { ...newTask, id: Date.now().toString() }]);
     setNewTask({
@@ -31,7 +31,7 @@ const HomePage = () => {
     });
   };
 
-  // Update task status and comments
+  //Here we can Update task status and comments
   const handleUpdateTask = (id, updatedFields) => {
     setTasks(tasks.map(task => (task.id === id ? { ...task, ...updatedFields } : task)));
   };
@@ -42,7 +42,7 @@ const HomePage = () => {
     setNewTask(prevState => ({ ...prevState, [name]: value }));
   };
 
-  // Filter tasks by status, priority, etc.
+  // Filter all tasks by status, priority.
   const filteredTasks = tasks.filter(task =>
     (!filter || task.status === filter || task.priority === filter) &&
     (!search || task.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -51,18 +51,18 @@ const HomePage = () => {
 
   return (
     <div className="container-fluid">
-      {/* Header */}
+      {}
       <Header />
 
       <div className="row">
-        {/* Sidebar */}
+        {}
         <div className="col-md-3">
           <Sidebar search={search} setSearch={setSearch} filter={filter} setFilter={setFilter} />
         </div>
 
-        {/* Main Content */}
+        {}
         <main className="col-md-9">
-          {/* New Task Form */}
+          {}
           <div className="my-3 p-3 border rounded">
             <h4>Create New Task</h4>
             <div className="row">
@@ -123,7 +123,7 @@ const HomePage = () => {
             <button onClick={handleCreateTask} className="btn btn-primary mt-2">Create Task</button>
           </div>
 
-          {/* Task List */}
+          {}
           <div>
             <h4>Tasks</h4>
             {filteredTasks.map(task => (
